@@ -2,7 +2,10 @@ import "../infra/firebase";
 
 import { NowRequest, NowResponse } from "@vercel/node";
 import admin from "firebase-admin";
+import dotenv from "dotenv";
 import { ItemPostBody } from "../type";
+
+dotenv.config();
 
 const db = admin.firestore();
 
