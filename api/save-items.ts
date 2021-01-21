@@ -12,7 +12,7 @@ const db = admin.firestore();
 export default async (req: NowRequest, res: NowResponse) => {
   const body = req.body as ItemPostBody;
   console.log("body", body);
-  const data = await db.collection("item").add(body);
+  const data = await db.collection("item").add({ data: body });
   console.log("data", data);
   const id = data.id;
   return res.json({ id });
