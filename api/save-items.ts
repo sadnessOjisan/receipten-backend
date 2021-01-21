@@ -14,8 +14,7 @@ export default async (req: NowRequest, res: NowResponse) => {
     res.status(200).end();
     return;
   }
-  console.log("body", req.body);
-  const body = JSON.parse(req.body) as ItemPostBody;
+  const body = req.body as ItemPostBody;
   const data = await db.collection("item").add({ data: body });
   console.log("data", data);
   const id = data.id;
