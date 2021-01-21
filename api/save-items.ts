@@ -1,8 +1,15 @@
+import "../infra/firebase";
+
 import { NowRequest, NowResponse } from "@vercel/node";
+import admin from "firebase-admin";
 import { ItemPostBody } from "../type";
 
-export default (req: NowRequest, res: NowResponse) => {
+const db = admin.firestore();
+
+export default async (req: NowRequest, res: NowResponse) => {
   const body = req.body as ItemPostBody;
-  console.log(JSON.stringify(body));
-  return res.json({ body });
+  console.log(body);
+  const data = await db.collection("item").add(body);
+  const id = data.id;
+  return res.json({ id });
 };
