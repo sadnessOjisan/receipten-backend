@@ -1,0 +1,24 @@
+{
+  "name": "receipten-backend",
+  "version": "1.0.0",
+  "description": "レシート拡張のバックエンド",
+  "main": "index.js",
+  "scripts": {
+    "start": "vercel dev",
+    "deploy": "vercel deploy --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sadnessOjisan/receipten-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sadnessOjisan/receipten-backend/issues"
+  },
+  "homepage": "https://github.com/sadnessOjisan/receipten-backend#readme",
+  "devDependencies": {
+    "typescript": "^4.1.3",
+    "vercel": "^21.1.0"
+  }
+}
