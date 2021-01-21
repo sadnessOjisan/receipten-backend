@@ -10,6 +10,10 @@ dotenv.config();
 const db = admin.firestore();
 
 export default async (req: NowRequest, res: NowResponse) => {
+  if (req.method === "OPTIONS") {
+    res.status(200).end();
+    return;
+  }
   const body = JSON.parse(req.body) as ItemPostBody;
   console.log("body", body);
   const data = await db.collection("item").add({ data: body });
