@@ -3,6 +3,6 @@ import { ItemPostBody } from "../type";
 
 export default (req: NowRequest, res: NowResponse) => {
   const body = req.body as ItemPostBody;
-  console.log(body);
+  console.log(JSON.stringify(body));
   return res.json({ body });
 };
