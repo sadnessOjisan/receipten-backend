@@ -11,5 +11,5 @@ export default async (req: NowRequest, res: NowResponse) => {
   if (typeof id !== "string") return res.json("error");
   const ref = await db.collection("item").doc(id);
   const data = await (await ref.get()).data();
-  return res.json({ data });
+  return res.json({ ...data });
 };
