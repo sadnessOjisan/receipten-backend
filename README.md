@@ -4,7 +4,7 @@
 
 ```sh
 # get
-receipten-backend.ojisan.vercel.app/api/get-items?id=xxxx
+https://receipten-backend.ojisan.vercel.app/api/get-items?id=aGt3MRhx7gPVJGyHUVYb
 
 # post
 receipten-backend.ojisan.vercel.app/api/save-items
