@@ -15,7 +15,7 @@ export default async (req: NowRequest, res: NowResponse) => {
   const data: D = (await (await ref.get()).data()) as any;
   const prices = data.data.map((d) => ({
     ...d,
-    priceNum: parseInt(d.itemPrice.replace("￥", "").replace(/,/g, "")),
+    priceNum: parseInt(d.itemPrice.replace("¥", "").replace(/,/g, "")),
   }));
   const sum = prices.reduce((prev, current) => prev + current.priceNum, 0);
   return res.json({ ...data, sum });
